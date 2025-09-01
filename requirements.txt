@@ -1,0 +1,39 @@
+# ===== Face Recognition with Emotion Detection - Locked Dependencies =====
+# Tested on: Python 3.11.9 (Windows 10/11), CPU
+# Notes:
+# - mediapipe 0.10.21 requires numpy<2 and protobuf<5
+# - OpenCV 4.11.0.86 works well with numpy 1.26.x
+# - TensorFlow 2.19.1 (CPU) is stable on Windows and with tf-keras 2.19.0
+# - dlib 19.24.1 is a widely used Windows-compatible wheel
+
+# ---- Core numerical stack (pin these first) ----
+numpy==1.26.4
+protobuf==4.25.8
+
+# ---- Computer vision ----
+opencv-python==4.11.0.86
+opencv-contrib-python==4.11.0.86
+pillow==11.3.0
+
+# ---- MediaPipe (face detection) ----
+mediapipe==0.10.21
+
+# ---- Classical face recognition (Dlib-based) ----
+dlib==19.24.1
+face-recognition==1.3.0
+
+# ---- Deep learning stack (for DeepFace) ----
+tensorflow==2.19.1
+tf-keras==2.19.0
+
+# ---- High-level face analysis ----
+deepface==0.0.95
+
+# ---- (Optional) Utilities often pulled by deepface
+# Keeping explicit pins helps reproducibility on Windows
+pandas==2.3.2
+requests==2.32.5
+gdown==5.2.0
+tqdm==4.67.1
+Flask==3.1.2
+flask-cors==6.0.1
